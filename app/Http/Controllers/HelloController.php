@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Http\Requests\HelloRequest;
 use Validator;
-use Illuminate\Support\Fancades\DB;
+use Illuminate\Support\Facades\DB;
 
 class HelloController extends Controller
 {
@@ -14,7 +14,7 @@ class HelloController extends Controller
     public function index(Request $request)
     {
         $items = DB::select('select * from people');
-        return view('hello.index', ['items'=> $items]);
+        return view('hello.index', ['items' => $items]);
     }
 
     public function post(Request $request)
